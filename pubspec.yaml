@@ -1,7 +1,7 @@
 name: blackfoot_flutter_lint
 description: Recommended lints for Blackfoot's Flutter apps to encourage good coding practices.
 repository: https://github.com/blackfoot-makers/blackfoot_flutter_lint
-version: 1.0.4
+version: 1.0.5
 homepage: https://blackfoot.io
 
 environment:

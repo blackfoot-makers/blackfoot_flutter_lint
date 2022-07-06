@@ -14,7 +14,6 @@ linter:
     - parameter_assignments
     - prefer_asserts_in_initializer_lists
     - prefer_final_locals
-    - prefer_final_parameters
     - prefer_if_elements_to_conditional_expressions
     - sort_constructors_first
     - sort_unnamed_constructors_first

@@ -1,3 +1,7 @@
+## 1.0.5
+
+- Remove `prefer_final_parameters` rule.
+
 ## 1.0.4
 
 - Remove `unnecessary_to_list_in_spreads` rule: not recognized by analyzer.
