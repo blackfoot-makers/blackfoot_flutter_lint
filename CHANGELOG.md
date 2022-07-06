@@ -1,3 +1,7 @@
+## 1.0.4
+
+- Remove `unnecessary_to_list_in_spreads` rule: not recognized by analyzer.
+
 ## 1.0.3
 
 - Fix homepage link.

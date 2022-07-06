@@ -21,7 +21,7 @@ linter:
     - unawaited_futures
     - unnecessary_await_in_return
     - unnecessary_parenthesis
-    - unnecessary_to_list_in_spreads
+    # - unnecessary_to_list_in_spreads Not recognized by dart lint
     - use_named_constants
     - sort_pub_dependencies
 
