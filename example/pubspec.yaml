@@ -10,4 +10,4 @@ environment:
 # lint set provided by this package is activated in the `analysis_options.yaml`
 # file located next to this `pubspec.yaml` file.
 dev_dependencies:
-  blackfoot_flutter_lint: ^1.0.0 # Check https://pub.dev/packages/blackfoot_flutter_lint for latest version number.
+  blackfoot_flutter_lint: ^1.0.1 # Check https://pub.dev/packages/blackfoot_flutter_lint for latest version number.
