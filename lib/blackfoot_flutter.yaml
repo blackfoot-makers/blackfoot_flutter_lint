@@ -1,0 +1,29 @@
+# Recommended lints for Blackfoot's Flutter apps.
+
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    - unnecessary_statements
+    - always_declare_return_types
+    - always_specify_types
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_redundant_argument_values
+    - directives_ordering
+    - flutter_style_todos
+    - parameter_assignments
+    - prefer_asserts_in_initializer_lists
+    - prefer_final_locals
+    - prefer_final_parameters
+    - prefer_if_elements_to_conditional_expressions
+    - sort_constructors_first
+    - sort_unnamed_constructors_first
+    - unawaited_futures
+    - unnecessary_await_in_return
+    - unnecessary_parenthesis
+    - unnecessary_to_list_in_spreads
+    - use_named_constants
+    - sort_pub_dependencies
+
+    - require_trailing_commas # Experimental
+
