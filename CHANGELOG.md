@@ -1,3 +1,7 @@
+## 1.0.6
+
+- Fix Readme and example.
+
 ## 1.0.5
 
 - Remove `prefer_final_parameters` rule.

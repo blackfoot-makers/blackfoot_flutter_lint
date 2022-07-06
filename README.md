@@ -30,13 +30,13 @@ Example `analysis_options.yaml` file:
 # IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
 # invoked from the command line by running `flutter analyze`.
 
-# The following line activates a set of recommended lints for Flutter apps,
-# packages, and plugins designed to encourage good coding practices.
+# The following line activates a set of recommended lints for Blackfoot's Flutter apps
+# designed to encourage good coding practices.
 include: package:blackfoot_flutter_lint/blackfoot_flutter.yaml
 
 linter:
   # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # section below to disable rules from the `package:blackfoot_flutter_lint/blackfoot_flutter.yaml`
   # included above or to enable additional rules. A list of all available lints
   # and their documentation is published at
   # https://dart-lang.github.io/linter/lints/index.html.
