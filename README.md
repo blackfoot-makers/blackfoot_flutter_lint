@@ -1,4 +1,4 @@
-[![pub package](https://img.shields.io/pub/v/flutter_lints.svg)](https://pub.dev/packages/blackfoot_flutter_lint)
+[![pub package](https://img.shields.io/pub/v/blackfoot_flutter_lint.svg)](https://pub.dev/packages/blackfoot_flutter_lint)
 
 This package contains a recommended set of lints for [Blackfoot]'s Flutter apps to encourage good coding practices.
 
