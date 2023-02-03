@@ -7,6 +7,7 @@
 // Normally, the declaration of the parameter  `partOne` in this function would
 // trigger the `prefer_final_locals` lint, but it has been
 // deactivated for the file with the `ignore_for_file` comment above.
+
 void main() {
   String partOne = 'Hello';
   // The following syntax deactivates a lint on a per-line bases:

@@ -4,25 +4,73 @@ include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
+    # Error Rules
+    - always_use_package_imports
+    - avoid_slow_async_io
+    - cancel_subscriptions
+    - close_sinks
+    - collection_methods_unrelated_type # Experimental
+    - discarded_futures
+    - literal_only_boolean_expressions
+    - no_adjacent_strings_in_list
+    - throw_in_finally
     - unnecessary_statements
+
+    # Style Rules
     - always_declare_return_types
+    - always_put_required_named_parameters_first
     - always_specify_types
     - avoid_bool_literals_in_conditional_expressions
+    - avoid_escaping_inner_quotes
+    - avoid_final_parameters
+    - avoid_multiple_declarations_per_line
+    - avoid_positional_boolean_parameters
     - avoid_redundant_argument_values
+    - avoid_returning_this
+    - avoid_unused_constructor_parameters
+    - avoid_void_async
+    - cascade_invocations
+    - cast_nullable_to_non_nullable
+    - deprecated_consistency
     - directives_ordering
+    - eol_at_end_of_file
     - flutter_style_todos
+    - implicit_call_tearoffs
+    - leading_newlines_in_multiline_strings
+    - no_default_cases # Experimental
+    - only_throw_errors
     - parameter_assignments
     - prefer_asserts_in_initializer_lists
+    - prefer_constructors_over_static_methods
+    - prefer_expression_function_bodies
+    - prefer_final_in_for_each
     - prefer_final_locals
+    - prefer_foreach
+    - prefer_int_literals
     - prefer_if_elements_to_conditional_expressions
+    - prefer_mixin
+    - prefer_null_aware_method_calls
+    - prefer_single_quotes
+    - require_trailing_commas # Experimental
+    - sized_box_shrink_expand
     - sort_constructors_first
     - sort_unnamed_constructors_first
+    - tighten_type_of_initializing_formals
     - unawaited_futures
     - unnecessary_await_in_return
+    - unnecessary_lambdas
     - unnecessary_parenthesis
-    # - unnecessary_to_list_in_spreads Not recognized by dart lint
+    - unnecessary_raw_strings
+    - unnecessary_to_list_in_spreads
+    - use_colored_box
+    - use_decorated_box
+    - use_enums
+    - use_is_even_rather_than_modulo
+    - use_late_for_private_fields_and_variables
     - use_named_constants
+    - use_raw_strings
+    - use_super_parameters
+
+    # Pub Rules
+    - secure_pubspec_urls
     - sort_pub_dependencies
-
-    - require_trailing_commas # Experimental
-
