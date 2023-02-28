@@ -1,3 +1,29 @@
+- Revert for version management
+   - PR: #1
+- [FIX] Version number commit
+   - PR: #2
+- [FIX] Run check also on main
+   - PR: #3
+- [FIX] Stagging
+   - PR: #4
+- [FIX] Tag before push in ci
+   - PR: #5
+- [FIX] Push tag also
+   - PR: #6
+- [FIX] Create changelog before push
+   - PR: #7
+- [FIX] Create latest tag
+   - PR: #8
+- [FIX] Typo on tag latest
+   - PR: #9
+- [FIX] Typo on remote name
+   - PR: #10
+- [FIX] Get real changelog creation
+   - PR: #11
+- [FIX] Changelog template
+   - PR: #12
+
+
 ## 1.0.7
 
 - Update for flutter 3.7 and dart 2.19.1
