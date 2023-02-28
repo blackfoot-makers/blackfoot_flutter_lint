@@ -37,12 +37,19 @@ jobs:
         with:
           fromTag: v${{ steps.read-before-version.outputs.version-number }}
           toTag: latest
+          failOnError: true
+          configurationJson: |
+            {
+              "template": "#{{UNCATEGORIZED}}\n\n"
+            }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update CHANGELOG
-        run: echo -e "$CHANGELOG_FILE\n\n$(cat CHANGELOG.md)" > CHANGELOG.md
+        run: |
+          echo -e $CHANGELOG_FILE
+          echo -e "$CHANGELOG_FILE$(cat CHANGELOG.md)" > CHANGELOG.md
         env:
-          CHANGELOG_FILE: ${{steps.build_changelog.outputs.changelog}}
+          CHANGELOG_FILE: ${{ steps.build_changelog.outputs.changelog }}
       - name: Version bump and tag
         run: |
           git config user.name Thing-leoh Nicolas
