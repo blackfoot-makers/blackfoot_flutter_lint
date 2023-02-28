@@ -27,9 +27,9 @@ jobs:
       - name: Read package version
         id: read-version
         uses: blackfoot-makers/flutter-version-number-action@v1.0
-      - name: Set lastest tag
+      - name: Set latest tag
         run: |
-          git tag lastest
+          git tag latest
           git push orgin latest
       - name: Build Changelog
         id: build_changelog
