@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Read package version
+        id: read-before-version
+        uses: blackfoot-makers/flutter-version-number-action@v1.0
+
       - name: Update minor version
         if: ${{ github.event.label.name != 'major' }}
         run: perl -i -pe 's/^(version:\s+\d+\.\d+\.)(\d+)$/$1.($2+1)/e' pubspec.yaml
@@ -23,13 +27,20 @@ jobs:
       - name: Read package version
         id: read-version
         uses: blackfoot-makers/flutter-version-number-action@v1.0
+      - name: Set lastest tag
+        run: |
+          git tag lastest
+          git push orgin latest
       - name: Build Changelog
-        id: github_release
+        id: build_changelog
         uses: mikepenz/release-changelog-builder-action@v3
+        with:
+          fromTag: v${{ steps.read-before-version.outputs.version-number }}
+          toTag: latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update CHANGELOG
-        run: echo -e "${{steps.github_release.outputs.changelog}}\n\n$(cat CHANGELOG.md)" > CHANGELOG.md
+        run: echo -e "${{steps.build_changelog.outputs.changelog}}\n\n$(cat CHANGELOG.md)" > CHANGELOG.md
       - name: Version bump and tag
         run: |
           git config user.name Thing-leoh Nicolas
