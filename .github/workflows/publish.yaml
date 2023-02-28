@@ -1,7 +1,8 @@
 name: Publish plugin to pub.dev
 
 on:
-  push:
+  workflow_dispatch:
+  create:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+*"
 jobs:
@@ -11,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Create github release
-        uses: "marvinpinto/action-automatic-releases@latest"
+        uses: "marvinpinto/action-automatic-releases@v1.2.1"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
