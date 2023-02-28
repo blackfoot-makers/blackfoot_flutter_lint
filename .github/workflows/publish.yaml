@@ -19,4 +19,4 @@ jobs:
           prerelease: false
       - uses: dart-lang/setup-dart@v1
       - name: Publish to pub.dev
-        run: dart pub publish
+        run: dart pub publish --force
