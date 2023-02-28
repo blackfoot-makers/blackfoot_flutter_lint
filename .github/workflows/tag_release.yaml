@@ -40,16 +40,16 @@ jobs:
           failOnError: true
           configurationJson: |
             {
-              "template": "## $PACKAGE_VERSION\n#{{UNCATEGORIZED}}\n\n"
+              "template": "#{{UNCATEGORIZED}}\n\n"
             }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGE_VERSION: ${{ steps.read-version.outputs.version-number }}
       - name: Update CHANGELOG
         run: |
-          echo -e "$CHANGELOG_FILE$(cat CHANGELOG.md)" > CHANGELOG.md
+          echo -e "## $PACKAGE_VERSION\n\n$CHANGELOG_FILE$(cat CHANGELOG.md)" > CHANGELOG.md
         env:
           CHANGELOG_FILE: ${{ steps.build_changelog.outputs.changelog }}
+          PACKAGE_VERSION: ${{ steps.read-version.outputs.version-number }}
       - name: Version bump and tag
         run: |
           git config user.name Thing-leoh Nicolas
