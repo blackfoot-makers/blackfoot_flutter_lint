@@ -9,6 +9,7 @@ on:
 
 jobs:
   tag-release:
+    if: "!contains(github.event.commits[0].message, 'Version bump v')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -27,6 +28,6 @@ jobs:
           git config user.name Thing-leoh Nicolas
           git config user.email nico@blackfoot.io
           git add pubspec.yaml
-          git commit -m "[skip ci] Version bump v${{ steps.read-version.outputs.version-number }}"
-          git push
+          git commit -m "Version bump v${{ steps.read-version.outputs.version-number }}"
           git tag v${{ steps.read-version.outputs.version-number }}
+          git push
