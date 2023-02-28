@@ -1,0 +1,15 @@
+name: Test Publish plugin
+
+on: pull_request
+
+jobs:
+  publish-dry-run:
+    permissions:
+      id-token: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+      - name: Publish dry-run
+        run: dart pub publish --dry-run
