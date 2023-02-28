@@ -40,7 +40,7 @@ jobs:
           failOnError: true
           configurationJson: |
             {
-              "template": "#{{UNCATEGORIZED}}\n\n"
+              "template": "#{{UNCATEGORIZED}}\n"
             }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
