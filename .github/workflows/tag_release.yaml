@@ -40,13 +40,13 @@ jobs:
           failOnError: true
           configurationJson: |
             {
-              "template": "#{{UNCATEGORIZED}}\n\n"
+              "template": "## $PACKAGE_VERSION\n#{{UNCATEGORIZED}}\n\n"
             }
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACKAGE_VERSION: ${{ steps.read-version.outputs.version-number }}
       - name: Update CHANGELOG
         run: |
-          echo -e $CHANGELOG_FILE
           echo -e "$CHANGELOG_FILE$(cat CHANGELOG.md)" > CHANGELOG.md
         env:
           CHANGELOG_FILE: ${{ steps.build_changelog.outputs.changelog }}
