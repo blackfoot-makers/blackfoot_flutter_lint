@@ -1,5 +1,3 @@
-
-
 ## 1.0.7
 
 - Update for flutter 3.7 and dart 2.19.1
