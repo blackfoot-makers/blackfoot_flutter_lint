@@ -3,7 +3,7 @@ name: Test Publish plugin
 on: pull_request
 
 jobs:
-  publish:
+  publish-dry-run:
     permissions:
       id-token: write
     runs-on: ubuntu-latest
