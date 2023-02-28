@@ -16,5 +16,5 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
       - uses: dart-lang/setup-dart@v1
-      - name: Publish to pub .dev
+      - name: Publish to pub.dev
         run: dart pub publish
