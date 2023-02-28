@@ -6,9 +6,10 @@ on:
       - main
 
 jobs:
-  tab-release:
+  tag-release:
     runs-on: ubuntu-latest
-
+    env:
+      COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
     steps:
       - uses: actions/checkout@v3
       - name: Update minor version
@@ -21,7 +22,14 @@ jobs:
       - name: Read package version
         id: read-version
         uses: blackfoot-makers/flutter-version-number-action@v1.0
+      - name: Update version bump
+        run: |
+          git config user.name Thing-leoh Nicolas
+          git config user.email nico@blackfoot.io
+          git add pubspec.yaml
+          git commit -m "[skip ci] Version bump v${{ steps.read-version.outputs.version-number }}"
+          git push
       - uses: rickstaa/action-create-tag@v1
         with:
-          tag: ${{ steps.read-version.outputs.version-number }}
-          message: ${{ github.event.head_commit.message }}
+          tag: v${{ steps.read-version.outputs.version-number }}
+          message: $COMMIT_MESSAGE
