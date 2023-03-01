@@ -2,14 +2,9 @@ name: Test Publish plugin
 
 on:
   pull_request:
-  push:
-    branches:
-      - main
 
 jobs:
   publish-dry-run:
-    permissions:
-      id-token: write
     runs-on: ubuntu-latest
 
     steps:
