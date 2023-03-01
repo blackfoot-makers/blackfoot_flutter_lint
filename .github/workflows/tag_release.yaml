@@ -59,6 +59,6 @@ jobs:
           git add pubspec.yaml CHANGELOG.md
           git commit -m "Version bump v${{ steps.read-version.outputs.version-number }}"
           git push
-      - uses: actions-ecosystem/action-push-tag@v1
+      - uses: rickstaa/action-create-tag@v1
         with:
           tag: v${{ steps.read-version.outputs.version-number }}
