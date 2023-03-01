@@ -7,9 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
-    permissions:
-      id-token: write
+  create-release:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +17,13 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
+  publish:
+    permissions:
+      id-token: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
       - uses: dart-lang/setup-dart@v1
       - name: Publish to pub.dev
         run: dart pub publish --force
