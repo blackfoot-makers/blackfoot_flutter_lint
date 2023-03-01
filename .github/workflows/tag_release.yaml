@@ -1,11 +1,9 @@
 name: Tag package release version
 
 on:
-  workflow_run:
-    workflows: ["Test Publish plugin"]
-    branches: [main]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 jobs:
   tag-release:
