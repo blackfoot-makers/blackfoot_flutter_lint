@@ -1,3 +1,8 @@
+## 1.0.9
+
+- [CHORE] Separate release creation from publication
+   - PR: #20
+
 ## 1.0.8
 
 - Revert for version management
