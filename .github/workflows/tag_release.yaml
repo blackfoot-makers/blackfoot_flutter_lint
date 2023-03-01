@@ -56,6 +56,5 @@ jobs:
           git config user.email nico@blackfoot.io
           git add pubspec.yaml CHANGELOG.md
           git commit -m "Version bump v${{ steps.read-version.outputs.version-number }}"
-          git push
           git tag v${{ steps.read-version.outputs.version-number }}
-          git push origin v${{ steps.read-version.outputs.version-number }}
+          git push --atomic origin main v${{ steps.read-version.outputs.version-number }}
