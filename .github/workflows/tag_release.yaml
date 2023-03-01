@@ -10,6 +10,8 @@ jobs:
     if: "!contains(github.event.commits[0].message, 'Version bump v')"
     permissions:
       contents: write
+      actions: write
+      statuses: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -56,5 +58,7 @@ jobs:
           git config user.email nico@blackfoot.io
           git add pubspec.yaml CHANGELOG.md
           git commit -m "Version bump v${{ steps.read-version.outputs.version-number }}"
-          git tag v${{ steps.read-version.outputs.version-number }}
-          git push --atomic origin main v${{ steps.read-version.outputs.version-number }}
+          git push
+      - uses: actions-ecosystem/action-push-tag@v1
+        with:
+          tag: v${{ steps.read-version.outputs.version-number }}
