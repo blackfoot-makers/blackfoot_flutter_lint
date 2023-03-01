@@ -1,3 +1,8 @@
+## 1.1.0
+
+- [FEAT] New rules for blackfoot flutter lint with flutter 3.7
+   - PR: #28
+
 ## 1.0.8
 
 - Revert for version management
