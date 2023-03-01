@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ssh-key: "${{ secrets.COMMIT_KEY }}"
       - name: Read old package version
         id: read-before-version
         uses: blackfoot-makers/flutter-version-number-action@v1.0
@@ -56,5 +58,3 @@ jobs:
           git commit -m "Version bump v${{ steps.read-version.outputs.version-number }}"
           git tag v${{ steps.read-version.outputs.version-number }}
           git push --atomic origin main v${{ steps.read-version.outputs.version-number }}
-        env:
-          GITHUB_TOKEN: ${{ secrets. PATNAME }}
