@@ -1,10 +1,9 @@
 name: Publish plugin to pub.dev
 
 on:
-  create:
+  push:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+*"
-  workflow_dispatch:
 
 jobs:
   create-release:
