@@ -33,7 +33,7 @@ jobs:
 
       - name: Read new package version
         id: read-version
-        uses: blackfoot-makers/flutter-version-number-action@v1.0
+        uses: blackfoot-makers/flutter-version-number-action@main
       - name: Set latest tag
         run: |
           git tag -f latest HEAD
