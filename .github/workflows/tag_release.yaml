@@ -22,7 +22,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update minor version
-        if: "!contains(steps.get-merged-pull-request.outputs.labels, 'major')"
+        if: "contains(steps.get-merged-pull-request.outputs.labels, 'minor')"
         run: perl -i -pe 's/^(version:\s+\d+\.\d+\.)(\d+)$/$1.($2+1)/e' pubspec.yaml
       - name: Update major version
         if: "contains(steps.get-merged-pull-request.outputs.labels, 'major')"

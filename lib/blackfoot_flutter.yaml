@@ -9,10 +9,11 @@ linter:
     - avoid_slow_async_io
     - cancel_subscriptions
     - close_sinks
-    - collection_methods_unrelated_type # Experimental
     - discarded_futures
     - literal_only_boolean_expressions
+    - prefer_void_to_null
     - no_adjacent_strings_in_list
+    - no_wildcard_variable_uses
     - throw_in_finally
     - unnecessary_statements
 
@@ -26,7 +27,6 @@ linter:
     - avoid_multiple_declarations_per_line
     - avoid_positional_boolean_parameters
     - avoid_redundant_argument_values
-    - avoid_returning_this
     - avoid_unused_constructor_parameters
     - avoid_void_async
     - cascade_invocations
@@ -35,7 +35,6 @@ linter:
     - directives_ordering
     - eol_at_end_of_file
     - flutter_style_todos
-    - implicit_call_tearoffs
     - leading_newlines_in_multiline_strings
     - no_default_cases # Experimental
     - only_throw_errors
@@ -49,6 +48,7 @@ linter:
     - prefer_if_elements_to_conditional_expressions
     - prefer_null_aware_method_calls
     - prefer_single_quotes
+    - public_member_api_docs
     - require_trailing_commas # Experimental
     - sized_box_shrink_expand
     - sort_constructors_first
@@ -59,7 +59,6 @@ linter:
     - unnecessary_lambdas
     - unnecessary_parenthesis
     - unnecessary_raw_strings
-    - unnecessary_to_list_in_spreads
     - use_colored_box
     - use_decorated_box
     - use_enums
@@ -67,8 +66,6 @@ linter:
     - use_late_for_private_fields_and_variables
     - use_named_constants
     - use_raw_strings
-    - use_super_parameters
 
     # Pub Rules
-    - secure_pubspec_urls
     - sort_pub_dependencies
