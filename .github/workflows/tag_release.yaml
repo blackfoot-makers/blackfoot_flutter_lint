@@ -27,6 +27,9 @@ jobs:
       - name: Update major version
         if: "contains(steps.get-merged-pull-request.outputs.labels, 'major')"
         run: perl -i -pe 's/^(version:\s+\d+\.)(\d+)(\.)(\d+)$/$1.($2+1).($3).($4-$4)/e' pubspec.yaml
+      - name: Update main version
+        if: "contains(steps.get-merged-pull-request.outputs.labels, 'main')"
+        run: perl -i -pe 's/^(version:\s+\d+\.)(\d+)(\.)(\d+)$/($1 + 1).($2-$2).($3-$3).($4-$4)/e' pubspec.yaml
 
       - name: Read new package version
         id: read-version
