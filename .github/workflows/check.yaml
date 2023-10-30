@@ -12,3 +12,10 @@ jobs:
       - uses: dart-lang/setup-dart@v1
       - name: Publish dry-run
         run: dart pub publish --dry-run
+      - name: Read new package version
+        id: read-version
+        uses: blackfoot-makers/flutter-version-number-action@main
+      - name: Display new package version
+        run: echo "$PACKAGE_VERSION"
+        env:
+          PACKAGE_VERSION: ${{ steps.read-version.outputs.version-number }}
